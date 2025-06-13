@@ -39,9 +39,10 @@ try:
         )
     )
     print(f"Collection {collection_name} created successfully.")
+
 except Exception as e:
     if "already exists" in str(e).lower():
-        print(f"Collection {collection_name} already exists. Using existing collection.")
+        print(f"Collection {collection_name} already exists. Using {collection_name}")
     else:
         print(f"error creating collection: {e}")
 
@@ -79,7 +80,7 @@ def add_file_to_vector_store(file_path):
    
 
 # Test file
-test_file = "test_file.pdf"
+test_file = "../test_file.pdf"
 add_file_to_vector_store(test_file)
 
 

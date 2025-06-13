@@ -1,10 +1,10 @@
 from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
 import os
-from src.vector_store import vector_store
+from vector_store import vector_store
 # Load environment variables from .env file
 load_dotenv()
-api_key = "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" or os.getenv("GROQ_API_KEY")
+api_key = os.getenv("GROQ_API_KEY")
 
 
 llm = ChatOpenAI(
